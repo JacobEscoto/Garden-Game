@@ -68,4 +68,15 @@ public class Planta {
             this.estado = "Sana";
         }
     }
+    
+    @Override
+    public String toString() {
+       return "Planta{"+
+               "Nombre: " +nombre+ '\''+
+               ", Especie: " + especie +
+               ", Ultimo Dia de Riego: " + ultimoRiego + '\'' +
+               ", Crecimiento: " + crecimiento + '\'' +
+               ", Estado: " + estado + '\'' +
+               '}';
+    }
 }

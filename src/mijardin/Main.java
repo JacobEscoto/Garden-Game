@@ -9,7 +9,7 @@ public class Main {
         Scanner read = new Scanner(System.in);
         Planta[] jardin = new Planta[8];
         boolean cantidad = false;
-        boolean jugar = true;
+        boolean jugar = false;
         int plantsTotal = 0;
         int agregarPlantas = 0;
         int plantasSanas = 0;
@@ -31,9 +31,7 @@ public class Main {
         if (!cantidad) {
             System.out.println("Cantidad invalida para agregar plantas a tu jardin!");
             jugar = false;
-
         } else {
-            
             for (int i = 0; i < agregarPlantas; i++) {
                 System.out.print("Nombre de la planta " + (i+1) + ": ");
                 String nombre = read.nextLine();
@@ -47,8 +45,8 @@ public class Main {
                 System.out.println(semilla.getNombre() + " agregada a tu jardin exitosamente");
                 plantsTotal++;
                 plantasSanas++;
-                jugar = true;
             }
+            jugar = true;
         }
         if (jugar) {
             Jugador player = new Jugador(user, plantsTotal, plantasSanas, plantasMarchitas, plantasMuertas);
@@ -59,6 +57,32 @@ public class Main {
             System.out.println("Plantas Sanas: " + player.getSanas() + "/" + player.getPlantsTotal());
             System.out.println("Plantas Marchitas: " + player.getMarchitas() + "/" + player.getPlantsTotal());
             System.out.println("Plantas Muertas: " + player.getMuertas() + "/" + player.getPlantsTotal());
+            
+            // Menu de Acciones
+            while (jugar) {
+                int dias = 1;
+                System.out.println("\n------------- ACCIONES -------------");
+                System.out.println("1- Regar Plantas");
+                System.out.println("2- Siguiente Dia");
+                System.out.println("3- Resumen de Jardin");
+                char accion = read.next().charAt(0);
+                
+                switch (accion) {
+                    case '1':
+                        System.out.print("Que planta desearias regar? \nEscribe el numero de la planta:");
+                        int plantaRegar = read.nextInt();
+                        if (plantaRegar >= 1 && plantaRegar <= jardin.length) {
+                            jardin[plantaRegar - 1].regar();
+                            System.out.println("Has regado la" + jardin[plantaRegar - 1].getNombre());
+                        }
+                        
+                        break;
+                    case '2':
+                        for (int i = 0; i < player.getPlantsTotal(); i++) {
+                            
+                        }
+                }
+            }
         }
     }
 
