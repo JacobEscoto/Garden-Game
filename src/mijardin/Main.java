@@ -41,12 +41,12 @@ public class Main {
             for (int i = 0; i < agregarPlantas; i++) {
                 System.out.print("\nNombre de la planta " + (i + 1) + ": ");
                 String nombre = read.nextLine();
-                System.out.print("Especie de la planta: ");
-                String especie = read.nextLine();
+                System.out.print("Tipo de la planta (Medicinal, Frutal, Arbol, Decorativa): ");
+                String tipo = read.next();
                 int ultimoRiego = 0;
                 int crecimiento = 0;
                 String estado = "Sana";
-                Planta semilla = new Planta(nombre, especie, ultimoRiego, crecimiento, estado);
+                Planta semilla = new Planta(nombre, tipo, ultimoRiego, crecimiento, estado);
                 jardin[i] = semilla;
                 System.out.println(semilla.getNombre() + " agregada a tu jardin exitosamente");
                 plantsTotal++;

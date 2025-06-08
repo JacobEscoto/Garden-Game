@@ -4,15 +4,15 @@ public class Planta {
 
     // Atributos
     private String nombre;
-    private String especie;
+    private String tipo;
     private int ultimoRiego;
     private int crecimiento;
     private String estado;
 
     // Constructor
-    public Planta(String nombre, String especie, int ultimoRiego, int crecimiento, String estado) {
+    public Planta(String nombre, String tipo, int ultimoRiego, int crecimiento, String estado) {
         this.nombre = nombre;
-        this.especie = especie;
+        this.tipo = tipo;
         this.ultimoRiego = ultimoRiego;
         this.crecimiento = crecimiento;
         this.estado = "Sana";
@@ -27,12 +27,12 @@ public class Planta {
         this.nombre = nombre;
     }
 
-    public String getEspecie() {
-        return especie;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setEspecie(String especie) {
-        this.especie = especie;
+    public void setEspecie(String tipo) {
+        this.tipo = tipo;
     }
 
     public int getUltimoRiego() {
@@ -86,7 +86,7 @@ public class Planta {
     @Override
     public String toString() {
         return "- Nombre: " + nombre
-                + "\n- Especie: " + especie
+                + "\n- Tipo: " + tipo
                 + "\n- Ultimo Dia de Riego: " + ultimoRiego
                 + "\n- Crecimiento: " + crecimiento
                 + "\n- Estado: " + estado;
