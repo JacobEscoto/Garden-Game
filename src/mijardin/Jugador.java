@@ -90,7 +90,7 @@ public class Jugador {
             if (estadoActual.equalsIgnoreCase("sana")) {
                 puntosSana += 10;
             } else if (estadoActual.equalsIgnoreCase("marchita")) {
-                puntosMarchita += 6;
+                puntosMarchita += 5;
             } else {
                 puntosMuerta -= 5;
             }
