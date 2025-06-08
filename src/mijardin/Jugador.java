@@ -79,6 +79,26 @@ public class Jugador {
         this.muertas = contMuertas;
     }
     
+    public int saludJardin(Planta[] jardin, int plantsTotal) {
+        int puntosSana = 0;
+        int puntosMarchita = 0;
+        int puntosMuerta = 0;
+        
+        for (int i = 0; i < plantsTotal; i++) {
+            String estadoActual = jardin[i].getEstado();
+            
+            if (estadoActual.equalsIgnoreCase("sana")) {
+                puntosSana += 10;
+            } else if (estadoActual.equalsIgnoreCase("marchita")) {
+                puntosMarchita += 6;
+            } else {
+                puntosMuerta -= 5;
+            }
+        }
+        int porcentaje = ((puntosSana + puntosMarchita + puntosMuerta)*10) / plantsTotal;
+        return porcentaje;
+    }
+    
     @Override
     public String toString() {
         return "- Jugador: " + usuario

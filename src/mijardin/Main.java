@@ -27,6 +27,11 @@ public class Main {
             agregarPlantas = read.nextInt();
             read.nextLine();
             cantidad = (agregarPlantas > 0 && agregarPlantas <= 8);
+        } else {
+            System.out.println("No deaseaste agregar ninguna planta!");
+            cantidad = false;
+            jugar = false;
+            return;
         }
 
         if (!cantidad) {
@@ -60,12 +65,16 @@ public class Main {
             int dias = 1;
             while (jugar) {
                 System.out.println("\n--> Dia #" + dias);
+
+                //Actualizar el estado de las plantas
                 player.estadoPlantas(jardin, player.getPlantsTotal());
+
                 System.out.println("------------- ACCIONES -------------");
                 System.out.println("1- Regar Plantas");
                 System.out.println("2- Siguiente Dia");
-                System.out.println("3- Resumen de Plantas");
-                System.out.println("4- Salir del Juego");
+                System.out.println("3- Resumen de Cada Planta");
+                System.out.println("4- Porcentaje de Salud (Jardin)");
+                System.out.println("5- Salir del Juego");
                 System.out.print("Que accion deseas realizar: ");
                 char accion = read.next().charAt(0);
 
@@ -102,6 +111,17 @@ public class Main {
                         }
                         break;
                     case '4':
+                        int salud = player.saludJardin(jardin, player.getPlantsTotal());
+                        System.out.println("Salud de tu Jardin: " + salud + "%");
+                        if (salud < 50) {
+                            System.out.println("TU JARDIN ESTA EN PESIMAS CONDICIONES!");
+                        } else if (salud >= 50 && salud <= 80) {
+                            System.out.println("TU JARDIN ESTA EN UNA CONDICION MODERADA");
+                        } else {
+                            System.out.println("TU JARDIN ESTA EN EXCELENTES CONDICIONES!");
+                        }
+                        break;
+                    case '5':
                         System.out.println("Saliste del Jardin...");
                         jugar = false;
                         break;
