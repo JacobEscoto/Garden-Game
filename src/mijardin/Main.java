@@ -42,7 +42,7 @@ public class Main {
                 System.out.print("\nNombre de la planta " + (i + 1) + ": ");
                 String nombre = read.nextLine();
                 System.out.print("Tipo de la planta (Medicinal, Frutal, Arbol, Decorativa): ");
-                String tipo = read.next();
+                String tipo = read.nextLine();
                 int ultimoRiego = 0;
                 int crecimiento = 0;
                 String estado = "Sana";
